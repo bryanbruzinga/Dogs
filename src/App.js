@@ -1,21 +1,24 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Header from './Components/Header.js'
-import Footer from './Components/Footer.js'
-import Home from './Components/Home.js'
-import Login from './Components/Login/Login';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./Components/Header.js";
+import Footer from "./Components/Footer.js";
+import Home from "./Components/Home.js";
+import Login from "./Components/Login/Login";
+import { UserStorage } from "./UserContext";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login/*" element={<Login />} />
-        </Routes>
-        <Footer />
+        <UserStorage>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<Login />} />
+          </Routes>
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </div>
   );
