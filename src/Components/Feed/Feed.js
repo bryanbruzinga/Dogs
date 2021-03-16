@@ -39,6 +39,7 @@ const Feed = ({ user }) => {
       )}
       {pages.map((page) => (
         <FeedPhotos
+          key={page}
           user={user}
           page={page}
           setModalPhoto={setModalPhoto}
